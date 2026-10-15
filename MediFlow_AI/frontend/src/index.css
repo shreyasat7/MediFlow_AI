@@ -1,0 +1,61 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&family=JetBrains+Mono:wght@400;500;700&family=Syne:wght@400;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --color-bg-primary: 240 244 248;
+    --color-surface: 255 255 255;
+    --color-surface-secondary: 226 232 240;
+    --color-primary: 10 110 189;
+    --color-secondary: 0 180 166;
+    --color-emergency: 230 57 70;
+    --color-success: 45 198 83;
+    --color-warning: 244 162 97;
+    --color-text-primary: 26 37 53;
+    --color-text-secondary: 74 85 104;
+    --color-border: 203 213 224;
+  }
+
+  html[data-theme="dark"] {
+    --color-bg-primary: 13 17 23;
+    --color-surface: 22 27 34;
+    --color-surface-secondary: 31 41 55;
+    --color-primary: 59 158 255;
+    --color-secondary: 0 212 200;
+    --color-emergency: 255 71 87;
+    --color-success: 46 213 115;
+    --color-warning: 255 165 2;
+    --color-text-primary: 230 237 243;
+    --color-text-secondary: 139 148 158;
+    --color-border: 48 54 61;
+  }
+
+  body {
+    background-color: rgb(var(--color-bg-primary));
+    color: rgb(var(--color-text-primary));
+    font-family: 'DM Sans', sans-serif;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Syne', sans-serif;
+    color: rgb(var(--color-text-primary));
+  }
+}
+
+/* Glassmorphism utilities */
+.glass-panel {
+  background-color: rgb(var(--color-surface) / 0.8);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgb(var(--color-border));
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+html[data-theme="dark"] .glass-panel {
+  background-color: rgb(var(--color-surface) / 0.6);
+  border-color: rgb(var(--color-border) / 0.5);
+}

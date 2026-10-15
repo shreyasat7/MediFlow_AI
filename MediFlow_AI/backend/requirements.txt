@@ -1,0 +1,24 @@
+# MediFlow AI — backend dependencies (pinned to known-good versions)
+# Install with:  ./venv/bin/pip install -r requirements.txt
+
+# Web framework + server (uvicorn[standard] pulls in websockets for /ws/activity)
+fastapi==0.141.1
+uvicorn[standard]==0.52.1
+pydantic==2.13.4
+websockets==15.0.1
+
+# Database
+SQLAlchemy==2.0.51
+
+# Auth & security
+bcrypt==5.0.0
+PyJWT==2.13.0
+cryptography==50.0.0
+
+# Config
+python-dotenv==1.2.2
+
+# AI (Groq LLM via LangChain)
+langchain-groq==1.1.3
+langchain-core==1.5.3
+groq==0.37.1
